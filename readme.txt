@@ -195,7 +195,7 @@ If the system time is reset to a later time (for example one hour ahead) then al
 alarms and timers will occur one hour later.
 If the system time is set backwards (for example one hour back) then the alarms and timers will occur an hour earlier.
 If the time is reset before the time a task was scheduled, then the task will be triggered on the next service (the next call to Alarm.delay).
-This is  the expected behaviour for Alarms – tasks scheduled for a specific time of day will trigger at that time, but the affect on timers may not be intuitive. If a timer is scheduled to trigger in 5 minutes time and the clock is set ahead by one hour, that timer will not trigger until one hour and 5 minutes has elapsed.
+This is  the expected behaviour for Alarms Â– tasks scheduled for a specific time of day will trigger at that time, but the affect on timers may not be intuitive. If a timer is scheduled to trigger in 5 minutes time and the clock is set ahead by one hour, that timer will not trigger until one hour and 5 minutes has elapsed.
 
 Q: What  is the valid range of times supported by these libraries?
 A: The time library is intended to handle times from Jan 1 1970 through Jan 19 2038.
@@ -206,6 +206,7 @@ Q: How many alarms can be created?
 A: Up to six alarms can be scheduled.  
 The number of alarms can be changed in the TimeAlarms header file (set by the constant dtNBR_ALARMS,
 note that the RAM used equals dtNBR_ALARMS  * 11)
+for esp8266 chip set up to 50 alarms.
 
 onceOnly Alarms and Timers are freed when they are triggered so another onceOnly alarm can be set to trigger again.
 There is no limit to the number of times a onceOnly alarm can be reset.
