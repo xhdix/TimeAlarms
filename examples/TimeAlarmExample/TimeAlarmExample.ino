@@ -27,9 +27,10 @@ void setup() {
 
   // create the alarms, to trigger at specific times
   Alarm.alarmRepeat(8,30,0, MorningAlarm);  // 8:30am every day
-  Alarm.alarmRepeat(17,45,0,EveningAlarm);  // 5:45pm every day
+  Alarm.alarmOnce(17,45,0,EveningAlarm);  // called once in 5:45pm 
   Alarm.alarmRepeat(dowSaturday,8,30,30,WeeklyAlarm);  // 8:30:30 every Saturday
-
+  Alarm.alarmOnce(dowFriday,8,30,30,WeeklyAlarm);  // called once in 8:30:30 Friday
+  
   // create timers, to trigger relative to when they're created
   Alarm.timerRepeat(15, Repeats);           // timer for every 15 seconds
   id = Alarm.timerRepeat(2, Repeats2);      // timer for every 2 seconds
